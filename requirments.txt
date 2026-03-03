@@ -1,0 +1,23 @@
+# Wejdź do folderu, gdzie trzymasz projekty (np. na dysku NVMe)
+cd C:\Users\mmazur\source\repos
+
+# Stwórz nowy folder dla profesjonalnego dubbingu
+mkdir LipSync_RTX
+cd LipSync_RTX
+
+# Stwórz wirtualne środowisko (izolacja)
+python -m venv venv
+
+# Aktywuj środowisko
+.\venv\Scripts\activate
+# Instalacja PyTorch, TorchVision i Torchaudio z obsługą CUDA 12.1
+pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121
+# Biblioteki do obróbki wideo i obrazu
+pip install opencv-python pillow numpy tqdm
+
+# Biblioteki do obsługi modeli Face Restoration (GFPGAN / CodeFormer)
+pip install basicsr facexlib gfpgan
+
+# Biblioteki do dźwięku i TTS (klonowanie głosu)
+pip install librosa soundfile tts
+pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121 --no-cache-dir
